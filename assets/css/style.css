@@ -40,8 +40,36 @@ a{
   pointer-events: none;
 }
 
+.nav-sidebar .standalone-image{
+  display: none;
+  transition: opacity .5s;
+  pointer-events: none;
+}
+
 .nav-sidebar.active .text{
   opacity: 1;
+}
+
+.nav-sidebar.active .standalone-image{
+  display: block;
+  padding-bottom: 1rem;
+}
+
+.nav-sidebar.active .standalone-image img{
+  padding-left:2rem;
+  height: 9rem;
+  width: 10.5rem;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.nav-sidebar.active .standalone-image .text{
+  font-weight: 600;
+  color: #FFFFFF;
+  display: flex;
+  justify-content: center;
+  text-align: center;
 }
 
 .nav-sidebar .wrapper{
@@ -71,6 +99,7 @@ a{
 .nav-sidebar .logo-container .logo{
   padding: 0.75rem 0.75rem 0.75rem 0.5rem;
 }
+
 
 .nav-sidebar .logo-container .logo img{
   display: block;
