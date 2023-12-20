@@ -281,7 +281,7 @@ td, th {
 }
 
 .title {
-  text-align: center;
+  text-align: left;
   margin-top: 30px;
   margin-bottom: 15px;
 }
@@ -289,4 +289,18 @@ td, th {
 .leave_status {
   font-weight: bold;
   color: green;
+}
+
+.button {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.button:hover {
+  background-color: #555;
 }
