@@ -181,6 +181,14 @@ h2 {
 }
 
 /*Profile Page Styles*/
+
+/* Style for the rounded square background */
+.profile-background {
+    background-color: #f1f1f1; /* Set background color for the square */
+    border-radius: 20px; /* Create rounded corners */
+    padding: 20px; /* Add padding to provide space around the content */
+}
+
 .profile-section {
     margin-top: 20px;
 }
