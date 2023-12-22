@@ -5,100 +5,44 @@ body {
     color: #333;
 }
 
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --p-color: #192023;
+  --s-color: #303439;
+  --bradius: .5rem;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f8f8f8;
+  color: #333;
+}
+
 .container {
     display: flex;
 }
 
-/*Left Side Styles*/
-.left-panel {
-    width: 20%;
-    background-color: #fff;
-    padding: 20px;
-    height: 100vh;
-    display: flex;
-    flex-direction: column;
-    color: #333;
+.content-container{
+  width: calc(100% - 5rem);
+  margin: 0 0 0 auto;
+  padding: 2.5rem;
+  transition: width .5s;
 }
 
-.centered {
-    text-align: center;
-}
-
-h1 {
-    margin-bottom: 20px;
-    font-size: 24px;
-}
-
-.profile-info img {
-    width: 100px;
-    height: 100px;
-    border-radius: 5px;
-    object-fit: cover;
-    margin-bottom: 10px;
-}
-
-.navigation ul {
-    list-style-type: none;
-    padding: 0;
-}
-
-.navigation li {
-    margin-bottom: 10px;
-}
-
-.navigation a {
-    text-decoration: none;
-    color: #333;
-    font-weight: bold;
-    display: block;
-    padding: 12px;
-    border-radius: 5px;
-    transition: background-color 0.3s ease;
-}
-
-.navigation a:hover {
-    background-color: #ddd;
-}
-
-.submenu-parent:hover .submenu {
-    display: block;
-}
-
-.submenu {
-    display: none;
-    background-color: #f9f9f9;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
-    border-radius: 5px;
-}
-
-.submenu li {
-    text-align: center;
-}
-
-.sign-out {
-    margin-top: auto;
-}
-
-.sign-out a {
-    display: block;
-    padding: 12px;
-    border-radius: 5px;
-    background-color: #ff4500;
-    color: #fff;
-    text-decoration: none;
-    margin-top: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.sign-out a:hover {
-    background-color: #cc3700;
-}
-
-/*Right Side Styles*/
-.right-panel {
-    width: 80%;
-    padding: 20px;
-    background-color: #f0f0f0;
+.content-container .desc{
+  width: 100%;
+  max-width: 50rem;
+  line-height:  1.875;
 }
 
 /*Announcement Page Styles*/
@@ -236,7 +180,6 @@ h2 {
     filter: brightness(1.2);
 }
 
-
 /*Profile Page Styles*/
 .profile-section {
     margin-top: 20px;
@@ -248,6 +191,7 @@ h2 {
 
 .profile-box {
     text-align: center;
+    
 }
 
 .profile-box img {
@@ -272,6 +216,7 @@ h2 {
     margin: 0 auto;
 }
 
+
 .profile-field {
     margin-bottom: 20px;
 }
@@ -280,17 +225,6 @@ h2 {
     display: block;
     margin-bottom: 5px;
     font-weight: bold;
-}
-
-.profile-field input {
-    width: 100%;
-    padding: 10px;
-    box-sizing: border-box;
-}
-
-.name-fields {
-    display: flex;
-    margin-bottom: 15px; 
 }
 
 .name-fields .left,
@@ -304,6 +238,33 @@ h2 {
     text-align: center;
 }
 
+/* Apply consistent styling to elements within the profile-field class */
+.profile-field label {
+    display: block; /* Display labels as block elements */
+    margin-bottom: 5px; /* Add spacing between labels */
+  }
+  
+  .profile-field input[type=text],
+  .profile-field input[type=email],
+  .profile-field input[type=tel],
+  .profile-field input[type=password] {
+    width: 300px; /* Set a consistent width for input fields */
+    padding: 15px; /* Add padding inside input fields */
+    margin: 5px 0 10px 0; /* Set margins around input fields */
+    display: block; /* Display input fields as block elements */
+    border: none; /* Remove default border */
+    background: #f1f1f1; /* Set background color */
+    border-radius: 20px; /* Round the corners of input fields */
+  }
+  
+  .profile-field input[type=text]:focus,
+  .profile-field input[type=email]:focus,
+  .profile-field input[type=tel]:focus,
+  .profile-field input[type=password]:focus {
+    background-color: #ddd; /* Change background color on focus */
+    outline: none; /* Remove default focus outline */
+  }
+  
 .cancel-button,
 .save-button {
     padding: 10px 20px;
@@ -320,3 +281,5 @@ h2 {
     background-color: #4caf50;
     color: #fff;
 }
+
+
