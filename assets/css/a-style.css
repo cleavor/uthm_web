@@ -1,0 +1,190 @@
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f8f8;
+    color: #333;
+}
+
+/* Google Font */
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+:root {
+  --p-color: #192023;
+  --s-color: #303439;
+  --bradius: .5rem;
+}
+
+/* Reset and base styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.container {
+    display: flex;
+}
+
+.content-container{
+  width: calc(100% - 5rem);
+  margin: 0 0 0 auto;
+  padding: 2.5rem;
+  transition: width .5s;
+}
+
+.content-container .desc{
+  width: 100%;
+  max-width: 50rem;
+  line-height:  1.875;
+}
+
+.announcement-box {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+.subject,
+.announcement-text {
+    margin-bottom: 20px;
+}
+
+.subject label,
+.announcement-text label {
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+}
+
+.subject input,
+.announcement-text input,
+.announcement-text textarea {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 16px;
+    color: #333;
+    transition: border-color 0.3s ease;
+}
+
+.subject input:focus,
+.announcement-text textarea:focus,
+.announcement-text input:focus {
+    border-color: #007BFF;
+}
+
+.announcement-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.save-button {
+    padding: 15px 25px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    font-size: 16px;
+    letter-spacing: 1px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.save-button {
+    color: #fff;
+}
+
+.save-button {
+    background-color: #28a745;
+}
+
+.save-button:hover {
+    filter: brightness(1.2);
+}
+
+/*Profile Page Styles*/
+
+/* Style for the rounded square background */
+.profile-background {
+    background-color: #f1f1f1; /* Set background color for the square */
+    border-radius: 20px; /* Create rounded corners */
+    padding-top: 30px;
+    padding-bottom: 20px;
+    padding-left: 100px;
+    width: 900px;
+}
+
+label {
+    display: block;
+}
+
+.profile-buttons {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.select {
+    width: 700px;
+    padding: 15px; 
+    border: none;
+    background-color: #b9b8b8;
+    border-radius: 20px;
+    margin: 5px 0 10px 0;
+}
+
+.select:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+input[type="radio"] {
+    margin: 0px 5px 10px 200px;
+    font-size: 20px;
+    width: 15px;
+    height: 15px;
+}
+
+input[type="radio"]:before {
+    content: "";
+    width: auto;
+    height: auto;
+    margin: auto;
+    border-radius: 50%;
+}
+
+input[type="radio"]:checked {
+    accent-color:  #b9b8b8;
+}
+  
+input[type=text],
+input[type=email],
+input[type=password] {
+    width: 700px; /* Set a consistent width for input fields */
+    padding: 15px; /* Add padding inside input fields */
+    margin: 5px 0 10px 0; /* Set margins around input fields */
+    display: block; /* Display input fields as block elements */
+    border: none; /* Remove default border */
+    background: #b9b8b8; /* Set background color */
+    border-radius: 20px; /* Round the corners of input fields */
+  }
+  
+input[type=text]:focus,
+input[type=email]:focus,
+input[type=password]:focus {
+    background-color: #ddd; /* Change background color on focus */
+    outline: none; /* Remove default focus outline */
+  }
+
+.save-button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 25px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.save-button {
+    background-color: #4caf50;
+    color: #fff;
+}
