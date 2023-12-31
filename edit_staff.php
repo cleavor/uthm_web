@@ -58,28 +58,28 @@
         <div class="profile-background">
             <form action="" method="POST">
                 <label for="user_id">User ID</label>
-                <input type="text" name="user_id" value="<?php echo "{$_POST['user_id']}"; ?>">
+                <input type="text" name="user_id" value="<?php echo "{$info['user_id']}"; ?>">
 
                 <label for="name">Name</label>
-                <input type="text" name="name" value="<?php echo "{$_POST['name']}"; ?>">
+                <input type="text" name="name" value="<?php echo "{$info['name']}"; ?>">
 
                 <label for="gender">Gender</label>
-                <input type="text" name="gender" value="<?php echo "{$_POST['gender']}"; ?>">
+                <input type="text" name="gender" value="<?php echo "{$info['gender']}"; ?>">
                                 
                 <label for="email">Email</label>
-                <input type="email" name="email" value="<?php echo "{$_POST['email']}"; ?>">
+                <input type="email" name="email" value="<?php echo "{$info['email']}"; ?>">
                         
                 <label for="phone">Phone Number</label>
-                <input type="text" name="phone" value="<?php echo "{$_POST['phone']}"; ?>">
+                <input type="text" name="phone" value="<?php echo "{$info['phone']}"; ?>">
                     
                 <label for="address">Address</label>
-                <input type="text" name="address" value="<?php echo "{$_POST['address']}"; ?>">
+                <input type="text" name="address" value="<?php echo "{$info['address']}"; ?>">
 
                 <label for="position">Position</label>
-                <input type="text" name="position" value="<?php echo "{$_POST['position']}"; ?>">
+                <input type="text" name="position" value="<?php echo "{$info['position']}"; ?>">
 
                 <label for="work_status">Work Status</label>
-                <input type="text" name="work_status" value="<?php echo "{$_POST['work_status']}"; ?>">
+                <input type="text" name="work_status" value="<?php echo "{$info['work_status']}"; ?>">
                         
                 <div class="profile-buttons">
                     <button type="submit" class="save-button" name="submit">Save</button>
