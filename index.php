@@ -8,7 +8,7 @@
         <title>Login</title>
             
         <!-- CSS -->
-        <link rel="stylesheet" href="css/login.css" />
+        <link rel="stylesheet" href="./assets/css/login.css" />
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
@@ -47,7 +47,7 @@
                 </form>
             </div>
             <div class="login-image">
-                <img src="img/railway.avif" alt="Railway Image">
+                <img src="./assets/img/railway.avif" alt="Railway Image">
             </div>
         </div>
     </body>
