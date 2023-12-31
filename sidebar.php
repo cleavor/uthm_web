@@ -7,7 +7,7 @@
         <div class="logo-container">
           <div class="logo-wrapper">
             <div class="logo">
-              <img src="img/logo.png" alt="Logo">
+              <img src="./assets/img/logo.png" alt="Logo">
             </div>
             <span class="text">Railway HR</span>
           </div>
@@ -15,7 +15,7 @@
         <div class="menu-container">
           <div class="menu-header">
             <div class="standalone-image">
-              <img src="img/profile.png" alt="Standalone Image">
+              <img src="./assets/img/profile.png" alt="Standalone Image">
             </div>
             <div class="standalone-image">
               <span class=text>
