@@ -13,7 +13,7 @@
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <title>Announcement</title>
    <!-- CSS -->
-   <link rel="stylesheet" href="css/style.css" />
+   <link rel="stylesheet" href="./assets/css/style.css" />
    <!-- Box Icons -->
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -41,7 +41,8 @@
         <a href="add_announcement.php" class="btnsearch2">+</a>
 
       </div>
-        <div class="announcement-box" style="background-color: #fff;padding: 20px;border-radius: 15px;box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
+        <div class="announcement-box" style="background-color: #fff;padding: 20px;border-radius: 15px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);">
          <?php
          include("connect.php");
 
@@ -102,7 +103,6 @@
     </div>
 
 <!-- Javascript -->
-<script src="js/script.js"></script>
+<script src="./assets/js/script.js"></script>
 </body>
-
 </html>
