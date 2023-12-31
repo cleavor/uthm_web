@@ -3,10 +3,29 @@
 
     error_reporting(0);
 
-    $announcement_id = $_GET["announcement_id"];
-    $subject = $_GET["subject"];
-    $description = $_GET["description"];
-    $date_of_release = $_GET["date_or_release"];
+    $sql = "SELECT * FROM announcements";
+    $result = mysqli_query($conn, $sql);
+    $info = mysqli_fetch_assoc($result);
+
+    if (isset($_POST["submit"])) {
+        $s_announcement_id = $_POST["announcement_id"];
+        $s_subject = $_POST["subject"];
+        $s_description = $_POST["description"];
+        $s_date_of_release = $_POST["date_or_release"];
+
+        $sql = "UPDATE announcements SET announcement_id = '$s_announcement_id', subject = '$s_subject',
+            description = '$s_description', date_of_release = '$s_date_of_release'
+            WHERE announcement_id = '$s_announcement_id'";
+
+        $result2 = mysqli_query($conn, $sql);
+        if($result2) {
+            echo "<script>alert('Record Updated.')</script>";
+        }
+
+        else {
+            echo "Failed to update record.";
+        }
+    }
 ?>
 
 <html lang="en">
@@ -33,39 +52,17 @@
             <form method="GET">
                 <div class="subject">
                     <label for="subject" style="display: block">Subject</label>
-                    <input type="text" name="subject" value="<?php echo $subject; ?>">
+                    <input type="text" name="subject" value="<?php echo "{$info['subject']}"; ?>">
                 </div>
                 <div class="announcement-text">
                     <label for="description" style="display: block">Description</label>
-                    <input type="text" name="description" value="<?php echo $description; ?>">
+                    <input type="text" name="description" value="<?php echo "{$info['description']}"; ?>">
                 </div>
                 <div class="announcement-buttons">
                     <button type="submit" class="save-button" name="submit">Save</button>
                 </div>
             </form>
         </div>
-
-        <?php 
-        if ($_GET["submit"]) {
-            $announcement_id = $_GET["announcement_id"];
-            $subject = $_GET["subject"];
-            $description = $_GET["description"];
-            $date_of_release = $_GET["date_of_release"];
-
-            $sql = "UPDATE announcements SET announcement_id = '$announcement_id', subject = '$subject',
-            description = '$description', date_of_release = '$date_of_release'
-            WHERE announcement_id = '$announcement_id'";
-
-            $result = mysqli_query($conn, $sql);
-            if($result) {
-                echo "<script>alert('Record Updated.')</script>";
-            }
-
-            else {
-                echo "Failed to update record.";
-            }
-        }
-    ?>
 
 <!-- Javascript -->
 <script src="./assets/js/script.js"></script>
