@@ -15,7 +15,7 @@
   <title>Leave Requests</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
   
   <!-- Box Icons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -95,6 +95,6 @@
       ?>
   
   <!-- Javascript -->
-  <script src="js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
