@@ -3,7 +3,7 @@
 
    if(isset($_GET["user_id"])){
       $user_id = $_GET["user_id"];
-      $delete = mysqli_query($conn,"DELETE FROM workstatus_records WHERE user_id = $user_id");
+      $delete = mysqli_query($conn,"DELETE FROM staff_records WHERE user_id = $user_id");
    }
 ?>
 
@@ -14,7 +14,6 @@
   <title>Work Status</title>
   <!-- CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
-  <link rel="stylesheet" href="./assets/css/a-style.css"/>
   <!-- Box Icons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -49,14 +48,14 @@
             
 
             // Build the SQL query based on provided search parameters
-            $sql = "SELECT * FROM workstatus_records WHERE 1";
+            $sql = "SELECT * FROM staff_records WHERE 1";
 
             if (!empty($search_user_id)) {
                $sql .= " AND user_id = '$search_user_id'";
             }
          } else {
             // Fetch all data if no specific search parameters are provided
-            $sql = "SELECT * FROM workstatus_records";
+            $sql = "SELECT * FROM staff_records";
          }
 
          $result = $conn->query($sql);
