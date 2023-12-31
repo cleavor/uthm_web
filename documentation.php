@@ -1,22 +1,10 @@
-<?php
-    include ("connect.php");
-
-    error_reporting(0);
-
-    $announcement_id = $_GET["announcement_id"];
-    $subject = $_GET["subject"];
-    $description = $_GET["description"];
-    $date_of_release = $_GET["date_or_release"];
-?>
-
 <html lang="en">
 <head>
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-   <title>Edit Announcement</title>
+   <title>Documentation</title>
    <!-- CSS -->
    <link rel="stylesheet" href="./assets/css/style.css" />
-   <link rel="stylesheet" href="./assets/css/a-style.css" />
    <!-- Box Icons -->
    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -27,45 +15,13 @@
     ?>
 
     <div class="content-container">
-        <h1 class="title" style="margin-left:10px">Edit Announcement</h1>
+        <h1 class="title" style="margin-left:360px;padding-top:50px">Documentation</h1>
 
-        <div class="announcement-box">
-            <form method="GET">
-                <div class="subject">
-                    <label for="subject" style="display: block">Subject</label>
-                    <input type="text" name="subject" value="<?php echo $subject; ?>">
-                </div>
-                <div class="announcement-text">
-                    <label for="description" style="display: block">Description</label>
-                    <input type="text" name="description" value="<?php echo $description; ?>">
-                </div>
-                <div class="announcement-buttons">
-                    <button type="submit" class="save-button" name="submit">Save</button>
-                </div>
-            </form>
+        <div class="button-box">
+            <a href="leave_request.php"><button class="left">Leave Requests</button></a>
+            <a href="others.php"><button class="left">Other Documents</button></a>
         </div>
-
-        <?php 
-        if ($_GET["submit"]) {
-            $announcement_id = $_GET["announcement_id"];
-            $subject = $_GET["subject"];
-            $description = $_GET["description"];
-            $date_of_release = $_GET["date_of_release"];
-
-            $sql = "UPDATE announcements SET announcement_id = '$announcement_id', subject = '$subject',
-            description = '$description', date_of_release = '$date_of_release'
-            WHERE announcement_id = '$announcement_id'";
-
-            $result = mysqli_query($conn, $sql);
-            if($result) {
-                echo "<script>alert('Record Updated.')</script>";
-            }
-
-            else {
-                echo "Failed to update record.";
-            }
-        }
-    ?>
+    </div>
 
 <!-- Javascript -->
 <script src="./assets/js/script.js"></script>
