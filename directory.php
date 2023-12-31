@@ -15,7 +15,7 @@
   <title>Staff Directory</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
   
   <!-- Box Icons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
@@ -68,7 +68,8 @@
                   // Output data of each row
                   echo "<table border='1'>";
                   echo "<thead>";
-                  echo "<tr><th>User ID</th><th>Name</th><th>Gender</th><th>Email</th><th>Phone</th><th>Address</th><th>Position</th><th>Work Status</th></tr>";
+                  echo "<tr><th>User ID</th><th>Name</th><th>Gender</th><th>Email</th><th>Phone</th><th>Address</th><th>Position</th>
+                  <th>Work Status</th></tr>";
                   echo "</thead>";
                   echo "<tbody>";
                   while ($row = $result->fetch_assoc()) {
@@ -103,6 +104,6 @@
          </div>
       
   <!-- Javascript -->
-  <script src="js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
