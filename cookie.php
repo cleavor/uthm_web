@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <title>Cookie Constent Box</title>
-        <link rel="stylesheet" href="css/cookie.css">
+        <link rel="stylesheet" href="./assets/css/cookie.css">
     </head>
     <body>
         <div class="wrapper">
