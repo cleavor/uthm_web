@@ -3,7 +3,7 @@
 
    if(isset($_GET["user_id"])){
       $user_id = $_GET["user_id"];
-      $delete = mysqli_query($conn,"DELETE FROM payroll_records WHERE user_id = $user_id");
+      $delete = mysqli_query($conn,"DELETE FROM staff_records WHERE user_id = $user_id");
    }
 ?>
 
@@ -13,7 +13,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Payroll</title>
   <!-- CSS -->
-  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="./assets/css/style.css" />
   <!-- Box Icons -->
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -48,14 +48,14 @@
             
 
             // Build the SQL query based on provided search parameters
-            $sql = "SELECT * FROM payroll_records WHERE 1";
+            $sql = "SELECT * FROM staff_records WHERE 1";
 
             if (!empty($search_user_id)) {
                $sql .= " AND user_id = '$search_user_id'";
             }
          } else {
             // Fetch all data if no specific search parameters are provided
-            $sql = "SELECT * FROM payroll_records";
+            $sql = "SELECT * FROM staff_records";
          }
 
          $result = $conn->query($sql);
@@ -64,7 +64,8 @@
             // Output data of each row
             echo "<table border='1'>";
             echo "<thead>";
-            echo "<tr><th>User ID</th><th>Name</th><th>Position</th><th>Salary</th><th>Deduction</th><th>Net Pay</th></tr>";
+            echo "<tr><th>User ID</th><th>Name</th><th>Position</th><th>Salary</th><th>Deduction</th><th>
+            Net Pay</th></tr>";
             echo "</thead>";
             echo "<tbody>";
             while ($row = $result->fetch_assoc()) {
@@ -90,6 +91,6 @@
       ?>
 
   <!-- Javascript -->
-  <script src="js/script.js"></script>
+  <script src="./assets/js/script.js"></script>
 </body>
 </html>
