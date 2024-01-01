@@ -1,36 +1,46 @@
 <?php
     include ("connect.php");
 
-    error_reporting(0);
+    if(isset($_GET['user_id'])) {
+        $user_id = $_GET['user_id'];
+        
+        $sql = "SELECT * FROM staff_records WHERE user_id = ?";
+        $stmt = mysqli_prepare($conn, $sql);
+        mysqli_stmt_bind_param($stmt, "i", $user_id);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        $info = mysqli_fetch_assoc($result);
 
-    $sql = "SELECT * FROM staff_records";
-    $result = mysqli_query($conn, $sql);
-    $info = mysqli_fetch_assoc($result);
-
-    if (isset($_POST["submit"])) {
-        $s_user_id = $_POST["user_id"];
-        $s_name = $_POST["name"];
-        $s_gender = $_POST["gender"];
-        $s_email = $_POST["email"];
-        $s_phone = $_POST["phone"];
-        $s_address = $_POST["address"];
-        $s_position = $_POST["position"];
-        $s_work_status = $_POST["work_status"];
-
-        $sql = "UPDATE staff_records SET user_id = '$s_user_id', name = '$s_name',
-        gender = '$s_gender', email = '$s_email',
-        phone = '$s_phone', address = '$s_address',
-        position = '$s_position', work_status = '$s_work_status',
-        WHERE user_id = '$s_user_id'";
-
-        $result2 = mysqli_query($conn, $sql);
-        if($result2) {
-            echo "<script>alert('Record Updated.')</script>";
+        if (!$info) {
+            echo "Staff record not found.";
+            exit; // Exit if staff record doesn't exist
         }
 
-        else {
-            echo "Failed to update record.";
+        if (isset($_POST["submit"])) {
+            $s_name = $_POST["name"];
+            $s_gender = $_POST["gender"];
+            $s_email = $_POST["email"];
+            $s_phone = $_POST["phone"];
+            $s_address = $_POST["address"];
+            $s_position = $_POST["position"];
+            $s_work_status = $_POST["work_status"];
+
+            $sql_update = "UPDATE staff_records SET name = ?, gender = ?, email = ?, phone = ?, address = ?, position = ?, work_status = ? WHERE user_id = ?";
+            $stmt_update = mysqli_prepare($conn, $sql_update);
+            mysqli_stmt_bind_param($stmt_update, "sssssssi", $s_name, $s_gender, $s_email, $s_phone, $s_address, $s_position, $s_work_status, $user_id);
+            $result_update = mysqli_stmt_execute($stmt_update);
+
+            if ($result_update) {
+                // JavaScript alert and redirection
+                echo '<script>alert("Update successful."); window.location = "directory.php";</script>';
+                exit;
+            } else {
+                echo "Failed to update record.";
+            }
         }
+    } else {
+        echo "Invalid user ID.";
+        exit;
     }
 ?>
 
