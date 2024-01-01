@@ -71,13 +71,10 @@
                 $position = $_POST["position"];
                 $work_status = $_POST["work_status"];
 
-                $query = "INSERT INTO staff_records VALUES ('$user_id','$name','$gender','$email','$phone',
-                '$address','$position','$work_status')";
+                $query = "INSERT INTO staff_records (user_id, name, gender, email, phone, address, position, work_status)
+                VALUES ('$user_id', '$name', '$gender', '$email', '$phone', '$address', '$position', '$work_status')";
                 mysqli_query($conn, $query);
-                echo 
-                "
-                <script> alert('Data inserted successfully!'); </script>
-                ";
+                echo "<script> alert('Data inserted successfully!'); </script>";
             }
         ?>
     </div>
