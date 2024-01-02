@@ -8,10 +8,12 @@
         <title>Login</title>
             
         <!-- CSS -->
-        <link rel="stylesheet" href="./assets/css/login.css" />
+        <link rel="stylesheet" href="./assets/css/style.css" />
         <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     </head>
     <body>
+        <?php include("sidebar.php"); ?>
+        <div class="content-container">
         <h1>STAFF MANAGEMENT SYSTEM RAILWAY HR</h1>
 
         <div class="login-container">
@@ -50,5 +52,6 @@
                 <img src="./assets/img/railway.avif" alt="Railway Image">
             </div>
         </div>
+                </div>
     </body>
 </html>

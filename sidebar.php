@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <nav class="nav-sidebar" id="sidebar">
     <div class="wrapper">
       <div class="nav-toggle" id="nav-toggle">
@@ -19,11 +22,19 @@
             </div>
             <div class="standalone-image">
               <span class=text>
-                A Person<br>
-                User ID: 821739
+                <?php
+                if (isset($_SESSION["name"]) && isset($_SESSION["id"])) {
+                  // If set, print the user's name and ID
+                  echo $_SESSION["name"] . '<br>';
+                  echo 'User ID: ' . $_SESSION["id"];
+              } else {
+                  // If not set, print a message asking the user to log in first
+                  echo "Please login first.";
+              }
+                ?>
               </span>
             </div>
-            <a href="announcement.php" class="menu active">
+            <a href="announcement.php" class="menu">
               <div class="menu-wrapper">
                 <div class="icon">
                   <i class='bx bxs-grid-alt'></i>
